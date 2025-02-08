@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM by Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addlanguage(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    // in this to addd li the code needs to traverse
+    addlanguage("Python")
+    addlanguage("TypeScript")
+
+    function addOptimisedLang(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptimisedLang("GoLang")
+    // in big projects its recommended to use this approach
+
+    // edit replace
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+    //edit 
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>Swift</li>'
+
+    //edit removal
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+</script>
+</html>
