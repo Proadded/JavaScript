@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Chai Aur Code learned by Aditya</H1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayAditya = function(){
+        console.log("Aditya")
+    }
+
+    setTimeout(sayAditya, 2000)
+    // document.querySelector('h1').innerHTML = "Learning from the best"
+    // what if I wanted it to change after 2 seconds
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Learning from the best"
+    }
+
+    const changeMe = setTimeout(changeText, 3000)
+    // keeping it inside a variable doesnt mean it wont be executed without call, 
+    // it will regardless 
+
+    // clearTimeout(changeMe)
+    // cannout use this without a reference
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log("Stopped")
+    })
+
+</script>
+</html>
