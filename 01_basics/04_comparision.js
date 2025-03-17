@@ -12,5 +12,5 @@
 //undefined ke sath saare false hi hote h comparisions
 
 console.log("2" === 2);
-//not just checks he value but also compares the data types
+//not just checks the value but also compares the data types
 
